@@ -1,75 +1,58 @@
-# Sorcerers of Code Frontend (React Native)
+# RakshitArtha - Frontend (React Native)
 
-This frontend uses Expo + React Native + TypeScript.
+## 🚀 Live Backend (Already Deployed on AWS)
+- Insurance API: http://13.205.17.56:5000/health ✅
+- Automation API: http://13.205.17.56:3000/health ✅
 
-## Local development
+No backend setup needed. The app connects to these URLs automatically.
 
-1. Install dependencies:
+---
 
+## Option 1: Run on Android Phone (USB)
+
+### Prerequisites
+- Node.js 20 LTS
+- Android Studio + Android SDK
+- USB debugging enabled on phone
+
+### Steps
 ```bash
+cd FRONTEND
 npm install
+npx react-native start --port 8081 --reset-cache
 ```
 
-2. Start Expo:
+In a second terminal:
+```bash
+adb reverse tcp:8081 tcp:8081
+npx react-native run-android
+```
+
+---
+
+## Option 2: Build APK via EAS Cloud (No Android Studio needed)
 
 ```bash
-npm run start
+npm install -g eas-cli
+cd FRONTEND
+npm install
+eas login        # use account: aadhi0511 or create free account at expo.dev
+eas build --platform android --profile preview
 ```
 
-3. Run on a platform:
+This builds in the cloud (~10 min) and gives a downloadable APK link.
 
-```bash
-npm run android
-npm run ios
-npm run web
-```
+---
 
-## Deployment-ready setup (EAS)
+## Option 3: Install Pre-built APK
 
-This project already includes:
+If an APK is available in the `/releases` section of this repo, download and install it directly on any Android phone.
 
-- EAS profiles in `eas.json`
-- app identifiers in `app.json`
-- build and submit scripts in `package.json`
+---
 
-### One-time setup
-
-1. Log in to Expo:
-
-```bash
-npx eas login
-```
-
-2. Configure project on Expo:
-
-```bash
-npx eas init
-```
-
-### Build
-
-```bash
-npm run build:android
-npm run build:ios
-npm run build:all
-```
-
-### Submit to stores
-
-```bash
-npm run submit:android
-npm run submit:ios
-```
-
-### OTA update
-
-```bash
-npm run update:prod
-```
-
-## Important next step
-
-Before publishing, update these values in `app.json` to your final app identity:
-
-- `expo.ios.bundleIdentifier`
-- `expo.android.package`
+## Tech Stack
+- React Native 0.76.5
+- TypeScript
+- NativeWind (Tailwind for RN)
+- Firebase Push Notifications
+- TanStack Query

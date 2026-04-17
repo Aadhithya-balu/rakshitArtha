@@ -1,4 +1,19 @@
 {
   "name": "rakshitartha",
-  "displayName": "RakshitArtha"
+  "displayName": "RakshitArtha",
+  "extra": {
+    "eas": {
+      "projectId": "89aef429-7fec-4b89-a969-eebe20d41478"
+    }
+  },
+  "expo": {
+    "android": {
+      "package": "com.aadhi0511.rakshitartha"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "89aef429-7fec-4b89-a969-eebe20d41478"
+      }
+    }
+  }
 }
