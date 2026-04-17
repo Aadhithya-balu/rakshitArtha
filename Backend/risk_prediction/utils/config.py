@@ -1,0 +1,1 @@
+MODEL_PATH = "model/risk_model.pkl"

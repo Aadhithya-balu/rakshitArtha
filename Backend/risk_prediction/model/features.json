@@ -1,0 +1,10 @@
+[
+  "rainfall_mm_24h",
+  "temperature_c",
+  "humidity_pct",
+  "wind_speed_kmph",
+  "aqi",
+  "blocked_routes_pct",
+  "avg_route_delay_min",
+  "disruption_flag"
+]
